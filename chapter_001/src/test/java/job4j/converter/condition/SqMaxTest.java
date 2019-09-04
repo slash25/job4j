@@ -8,9 +8,9 @@ import static org.junit.Assert.assertThat;
 
 public class SqMaxTest {
     @Test
-    public void whenThirdMax() {
+    public void whenSecondMax() {
         SqMax check = new SqMax();
-        int result = check.max(10, 20, 30,5);
-        assertThat(result, is(30));
+        int result = check.max(5, 45, 30,5);
+        assertThat(result, is(45));
     }
 }
