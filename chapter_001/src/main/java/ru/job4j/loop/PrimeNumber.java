@@ -4,15 +4,14 @@ public class PrimeNumber {
     public int calc(int finish) {//2,3,4,5;
         int count = 0;
 
-        for (int num = 2; num <= finish; num++) {
-                    if ((num == 2) | (num == 3))
-                        count++;
-
-                    else if ((num % 2 == 0) | (num % 3 == 0)){
-                    }
-
-                    else
-                    count++;
+        int i,j;
+        mark1:for ( i = 2; i <= finish; i++ ) {
+            for ( j = (int)Math.sqrt( i ); j != 1; j-- ) {
+                if ( i % j != 0 ) {
+                    continue mark1;
+                }
+            }
+            count++;
         }
         return count;
     }
