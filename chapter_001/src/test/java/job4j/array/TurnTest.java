@@ -17,11 +17,20 @@ public class TurnTest {
     }
 
     @Test
-    public void whenTurnArrayWithOddAmountOfElementsThenTurnedArray() {
+    public void whenTurnArrayWithOddAmountOfElementsThenTurnedArray() {//
         Turn turner = new Turn();
         int[] input = new int[] {1,2,3,4,5,};
         int[] result = turner.back(input);
         int[] expect = new int[] {5,4,3,2,1};
+        assertThat(result, is(expect));
+    }
+
+    @Test
+    public void whenTurnArrayWith123456789() {//
+        Turn turner = new Turn();
+        int[] input = new int[] {1,2,3,4,5,6,7,8,9};
+        int[] result = turner.back(input);
+        int[] expect = new int[] {9,8,7,6,5,4,3,2,1};
         assertThat(result, is(expect));
     }
 }
