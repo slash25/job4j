@@ -22,4 +22,11 @@ public class ArrayCharTest {
         boolean result =ArrayChar.startsW(word, pref);
         assertThat(result, is(false));
     }
+    @Test
+    public void whenNotStartWithPrefixThenFalse1() {
+        char[] word = {'H', 'e', 'l', 'l', 'o'};
+        char[] pref = {'H', 'i','l'};
+        boolean result =ArrayChar.startsW(word, pref);
+        assertThat(result, is(false));
+    }
 }
