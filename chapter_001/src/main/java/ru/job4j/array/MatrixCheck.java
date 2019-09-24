@@ -8,14 +8,12 @@ public class MatrixCheck {
             result = true;// у метода результат будет ложь если эту строку не использовать
             return result;
         }
-        if (provWerticalX(board)) {
+        if (provVerticalX(board)) {
             result = true;
             return result;
         }
-
         return result;
     }
-
     private static boolean provHorizontX(char[][] board) {
         boolean result = false;
         int countXj = 0;
@@ -35,32 +33,22 @@ public class MatrixCheck {
         return result;
     }
 
-    private static boolean provWerticalX(char[][] board) {
+    private static boolean provVerticalX(char[][] board) {
         boolean result = false;
-        int J = 0;
-        int countXi = 0;
+        int countXj = 0;
 
         for (int i = 0; i < board.length; i++) {
-
-            for (int j = 0; j < board.length; j++) {
-                if ((board[i][j] == 'X') & (countXi < 2)) {
-                    countXi = countXi + 1;
-                    J = j;
-                    break;
+            for (int j = 0; j < board.length; j++) { //проверить последовательность.
+                if (board[j][i] == 'X') {
+                    countXj = countXj + 1;
                 }
-
-                if (board[i][J] == 'X') {
-                    countXi = countXi + 1;
-                    if (countXi < board.length) {
-                        break;
-                    } else {
-                        result = true;
-                        return result;
-                    }
+                if (countXj == board.length) {
+                    result = true;
+                    return result;
                 }
             }
+            countXj = 0;
         }
-
         return result;
     }
 
