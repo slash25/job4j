@@ -13,9 +13,9 @@ public class Calculate {
      */
     public static void main(String[] args) {
         add(1, 1);
-        div(4,2);
-        multiply(2,1);
-        subtruck(10,5);
+        div(4, 2);
+        multiply(2, 1);
+        subtruck(10, 5);
     }
 
 
@@ -25,17 +25,17 @@ public class Calculate {
     }
 
 
-    private static  void div(int first, int second){
+    private static  void div(int first, int second) {
         int result = first / second;
         System.out.println(first + " / " + second + " = " + result);
     }
 
-    private static  void multiply(int first, int second){
+    private static  void multiply(int first, int second) {
         int result = first * second;
         System.out.println(first + " * " + second + " = " + result);
     }
 
-    private static  void subtruck(int first, int second){
+    private static  void subtruck(int first, int second) {
         int result = first - second;
         System.out.println(first + " * " + second + " = " + result);
     }

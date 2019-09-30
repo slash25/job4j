@@ -1,6 +1,6 @@
 package job4j.array;
 import org.junit.Test;
-import ru.job4j.array.FindLoopNew;
+import ru.job4j.array.FindLoop;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
@@ -11,7 +11,7 @@ public class FindLoopTest {
     public void whenArrayHasLengh5Then0() {
         int[] input = new int[] {5, 10, 3};
         int value = 5;
-        int result = FindLoopNew.indexOf(input, value);
+        int result = FindLoop.indexOf(input, value);
         int expect = 0;
         assertThat(result, is(expect));
     }
@@ -22,7 +22,7 @@ public class FindLoopTest {
         int value = 2;
         int start = 2;
         int finish = 4;
-        int result = FindLoopNew.indexOf(input, value, start, finish);
+        int result = FindLoop.indexOf(input, value, start, finish);
         int expect = 3;
         assertThat(result, is(expect));
     }

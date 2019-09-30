@@ -10,7 +10,7 @@ public class SqMaxTest {
     @Test
     public void whenSecondMax() {
         SqMax check = new SqMax();
-        int result = check.max(5, 45, 30,5);
+        int result = SqMax.max(5, 45, 30, 5);
         assertThat(result, is(45));
     }
 }

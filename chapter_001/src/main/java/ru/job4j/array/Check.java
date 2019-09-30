@@ -6,10 +6,11 @@ public class Check {
         int counFalse = 0;
         boolean result = false;
         for (boolean value :  data) {
-            if (value){//if value == true
+            if (value) { //if value == true
                 countTue++;
-            }else
-            counFalse++;
+            } else {
+                counFalse++;
+            }
         }
 
         if (countTue == data.length | counFalse == data.length) {

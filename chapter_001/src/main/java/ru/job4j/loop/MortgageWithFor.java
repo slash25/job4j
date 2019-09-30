@@ -24,7 +24,6 @@ public class MortgageWithFor {
     }
 
     private boolean testAmWithPerc(int amWithPerc, int sum) {
-        return sum >= amWithPerc;//return true
+        return sum >= amWithPerc; //return true
     }
 }
-

@@ -20,14 +20,14 @@ public class ConverterTest {
         Assert.assertEquals(expected, out);
     }
     @Test
-    public void euroToRuble(){
+    public void euroToRuble() {
         int in = 50;
         int expected = 3500;
         int out = Converter.euroToRuble(in);
         Assert.assertEquals(expected, out);
     }
     @Test
-    public void dollarToRuble(){
+    public void dollarToRuble() {
         int in = 50;
         int expected = 3000;
         int out = Converter.dollarToRubl(in);

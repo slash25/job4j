@@ -26,14 +26,13 @@ s = w * h;
 public class SqArea {
     public static int square(int p, int k) {
 
-        int l = (p/2)/( 1 + k);//Вычислим длину из выведенной формулы периметра
-        int h = k * l;//Вычислим высоту
-        int s = l * h;
-        return s;
+        int l = (p / 2) / (1 + k); //Вычислим длину из выведенной формулы периметра
+        int h = k * l; //Вычислим высоту
+        return  l * h;
     }
 
     public static void main(String[] args) {
-        int result1 = square(4,1);
+        int result1 = square(4, 1);
         System.out.println(" p = 6, k = 2, s = 2, real = " + result1);
     }
 }

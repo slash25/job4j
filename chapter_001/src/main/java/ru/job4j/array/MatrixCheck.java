@@ -5,7 +5,7 @@ public class MatrixCheck {
         boolean result = false;
 
         if (provHorizontX(board)) {
-            result = true;// у метода результат будет ложь если эту строку не использовать
+            result = true; // у метода результат будет ложь если эту строку не использовать
             return result;
         }
         if (provVerticalX(board)) {
@@ -18,9 +18,9 @@ public class MatrixCheck {
         boolean result = false;
         int countXj = 0;
 
-        for (int i = 0; i < board.length; i++) {
+        for (char[] chars : board) {
             for (int j = 0; j < board.length; j++) { //проверить последовательность.
-                if (board[i][j] == 'X') {
+                if (chars[j] == 'X') {
                     countXj = countXj + 1;
                 }
                 if (countXj == board.length) {
@@ -38,8 +38,8 @@ public class MatrixCheck {
         int countXj = 0;
 
         for (int i = 0; i < board.length; i++) {
-            for (int j = 0; j < board.length; j++) { //проверить последовательность.
-                if (board[j][i] == 'X') {
+            for (char[] chars : board) { //проверить последовательность.
+                if (chars[i] == 'X') {
                     countXj = countXj + 1;
                 }
                 if (countXj == board.length) {
