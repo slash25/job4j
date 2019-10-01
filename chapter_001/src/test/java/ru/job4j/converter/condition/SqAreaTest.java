@@ -1,4 +1,4 @@
-package job4j.converter.condition;
+package ru.job4j.converter.condition;
 
 import org.junit.Assert;
 import org.junit.Test;
