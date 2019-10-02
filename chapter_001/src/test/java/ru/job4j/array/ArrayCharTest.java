@@ -6,9 +6,15 @@ import ru.job4j.array.ArrayChar;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
+//  if (pref[index] == word[index]) { так мы проверяем совпадение
+//
+// if (pref[index] != word[index]) { так мы проверяем разницу
+//
+// если это условие выполнилось то резулт фолс и брейк
+
 public class ArrayCharTest {
     @Test
-    public void whenStartWithPrefixThenTrue() {
+    public void whenStartWithPrefix() {
         char[] word = {'H', 'e', 'l', 'l', 'o'};
         char[] pref = {'H', 'e'};
         boolean result = ArrayChar.startsW(word, pref);
@@ -16,14 +22,14 @@ public class ArrayCharTest {
     }
 
     @Test
-    public void whenNotStartWithPrefixThenFalse() {
+    public void whenNotStartWithPrefix() {
         char[] word = {'H', 'e', 'l', 'l', 'o'};
         char[] pref = {'H', 'i'};
         boolean result = ArrayChar.startsW(word, pref);
         assertThat(result, is(false));
     }
     @Test
-    public void whenNotStartWithPrefixThenFalse1() {
+    public void whenNotStartWithPrefix1() {
         char[] word = {'H', 'e', 'l', 'l', 'o'};
         char[] pref = {'H', 'i', 'l'};
         boolean result = ArrayChar.startsW(word, pref);
