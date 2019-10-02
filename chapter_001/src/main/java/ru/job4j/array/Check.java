@@ -1,21 +1,17 @@
 package ru.job4j.array;
 
+// сравниваем элементы по очереди с первым, если нашли разницу то фолс и брейк
 public class Check {
     public boolean mono(boolean[] data) {
-        int countTue = 0;
-        int counFalse = 0;
-        boolean result = false;
-        for (boolean value :  data) {
-            if (value) { //if value == true
-                countTue++;
-            } else {
-                counFalse++;
+        boolean firsElement = data[0];
+        boolean result = true;
+        for (int i = 1; i < data.length; i++) {
+            if (data[i] != firsElement) { //if value == true
+                result = false;
+                break;
             }
-        }
-
-        if (countTue == data.length | counFalse == data.length) {
-            result = true;
         }
         return result;
     }
 }
+

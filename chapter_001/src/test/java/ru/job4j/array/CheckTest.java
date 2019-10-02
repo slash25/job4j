@@ -7,7 +7,7 @@ import static org.junit.Assert.assertThat;
 
 public class CheckTest {
     @Test
-    public void whenDataMonoByTrueThenTrue() {
+    public void whenDataMonoByTrueThenTrue1() {
         Check check = new Check();
         boolean[] input = new boolean[] {true, true, true};
         boolean result = check.mono(input);
@@ -15,25 +15,18 @@ public class CheckTest {
     }
 
     @Test
-    public void whenDataNotMonoByTrueThenFalse() {
+    public void whenDataNotMonoByTrueThenFalse1() {
         Check check = new Check();
         boolean[] input = new boolean[] {true, false, true};
         boolean result = check.mono(input);
         assertThat(result, is(false));
     }
+
     @Test
-    public void whenDataNotMonoByFalse() {
-        Check check = new Check();
-        boolean[] input = new boolean[] {true, false, true};
-        boolean result = check.mono(input);
-        assertThat(result, is(false));
-    }
-    @Test
-    public void whenDataMonoByFalse() {
+    public void whenDataMonoByFalse1() {
         Check check = new Check();
         boolean[] input = new boolean[] {false, false, false};
         boolean result = check.mono(input);
         assertThat(result, is(true));
     }
-
 }
