@@ -39,12 +39,12 @@ public class Logic {
         return rst;
     }
 
-    public boolean isFree(Cell ... cells) {
+    public boolean isFree(Cell... cells) {
         boolean result = cells.length > 0;
         for (Cell cell : cells) {
             if (this.findBy(cell) != -1) {
-               result = false;
-               break;
+                result = false;
+                break;
             }
         }
         return result;
@@ -71,57 +71,33 @@ public class Logic {
     public boolean isWin() {
         int[][] table = this.convert();
         boolean result = false;
-        if (provHorizontX(table)) {
+        if (provHorXandVertX(table)) {
             result = true; // у метода результат будет ложь если эту строку не использовать
             return result;
         }
-        if (provVerticalX(table)) {
-            result = true;
-            return result;
-        }
         return result;
     }
 
-
-
-
-    private static boolean provHorizontX(int[][] board) {
+    private static boolean provHorXandVertX(int[][] board) {
         boolean result = false;
-        int countXj = 0;
-
-        for (int[] value : board) {
-            for (int j = 0; j < board.length; j++) { //проверить последовательность.
-                if (value[j] == 1) {
-                    countXj = countXj + 1;
+        int count = 0;
+        int count2 = 0;
+        for (int row = 0; row < board.length; row++) {//идем по диагонали
+            if (board[row][row] == 1) {// находим первый встречный х
+                //запускаем второй цикл
+                for (int cell = 0; cell < board.length; cell++) {
+                    //и считаем сколько в столбце и в строке х
+                    if (board[row][cell] == 1) count++;
+                    if (board[cell][row] == 1) count2++;
                 }
-                if (countXj == board.length) {
+                if ((count == board.length) | (count2 == board.length)) {
                     result = true;
                     return result;
                 }
             }
-            countXj = 0;
         }
         return result;
     }
-
-    private static boolean provVerticalX(int[][] board) {
-        boolean result = false;
-        int countXj = 0;
-        for (int i = 0; i < board.length; i++) {
-            for (int[] value : board) { //проверить последовательность.
-                if (value[i] == 1) {
-                    countXj = countXj + 1;
-                }
-                if (countXj == board.length) {
-                    result = true;
-                    return result;
-                }
-            }
-            countXj = 0;
-        }
-        return result;
-    }
-
 
     public int[][] convert() {
         int[][] table = new int[this.size][this.size];
