@@ -1,9 +1,14 @@
 package ru.job4j.array;
-
+/*** Class for delete null values of string
+ *
+ */
 public class Defragment {
-
+    /**Counting summ of nulls
+     *
+     * @param  array our array
+     * @return array
+     */
     public static String[] compress(String[] array) {
-        //Counting value of nulls
         int countNull = 0;
         for (int index = 0; index < array.length - 1; index++) {
             String cell = array[index];
@@ -23,8 +28,13 @@ public class Defragment {
             }
         return array;
     }
-
-    private static  String[] sdvig(String[] array, int j) { //method sdviga areya na 1 to left
+    /**method for sdvig of array on one value  to left
+     *
+     * @param array array of string
+     * @param j index
+     * @return array
+     */
+    private static  String[] sdvig(String[] array, int j) {
         for (int count = j + 1; count < array.length - 1; count++) {
             String temp = array[count];
             array[count] = array[count + 1];

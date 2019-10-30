@@ -1,21 +1,11 @@
 package ru.job4j.condition;
+/**Нужно найти максимум из четырех чисел
+ */
+class SqMax {
+    static int max(int first, int second, int third, int forth) {
+        int newresult1 = first > second ? first : second;
+        int newresult2 = third > forth ? third : forth;
+        return   newresult1 > newresult2 ? newresult1 : newresult2;
 
-public class SqMax {
-    public static int max(int first, int second, int third, int forth) {
-        int result = forth;
-        if (first > second) {
-            if (first > third) {
-                if (first > forth) {
-                    result = first;
-                }
-            }
-        } else if (second > third) {
-            if (second > forth) {
-                result = second;
-            }
-        } else if (third > forth) {
-            result = third;
-        }
-        return result;
     }
 }

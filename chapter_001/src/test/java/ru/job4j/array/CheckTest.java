@@ -1,10 +1,9 @@
 package ru.job4j.array;
 import org.junit.Test;
-import ru.job4j.array.Check;
-
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
-
+/**Автотест сравнения элементов в массиве boolean[] input друг с другом
+ */
 public class CheckTest {
     @Test
     public void whenDataMonoByTrueThenTrue1() {
