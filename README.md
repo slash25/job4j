@@ -3,5 +3,5 @@
 # polnoe testirovanie
 #pakage 123
 
-# Я начал курс job4j в 2019 году, планирую закончить в 2020 году
-# I create new branch with name: task_124176
+# В курсе производилась работа в ветках git
+# Создание ветки в IDEA
