@@ -56,7 +56,7 @@ public class Triangle {
      */
 
     private boolean exist(double a, double b, double c) {
-        return (a + c > b) & (c + b > a) & (b + a > c);
+        return (a + c > b) && (c + b > a) && (b + a > c);
     }
 
     /** Метод проверяет можно ли построить треугольник  через вычисление площади
