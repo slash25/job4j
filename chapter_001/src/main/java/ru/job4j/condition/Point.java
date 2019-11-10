@@ -6,18 +6,20 @@ import static java.lang.Math.pow;
  *
  */
 public class Point {
-    private int x;
-    private int y;
+    private double x;
+    private double y;
 
     /**Создадим конструктор класса Point
      *
      * @param first x
      * @param second y
      */
-    public Point(int first, int second) {
+    public Point(double first, double second) {
         this.x = first;
         this.y = second;
     }
+
+
 
     /**Вычислим расстаяния между точками используя библиотеку Math
      * pow - степень

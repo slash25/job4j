@@ -3,6 +3,17 @@ package ru.job4j.condition;
 import java.lang.reflect.Array;
 
 public class Triangle {
+
+    private Point first;
+    private Point second;
+    private Point third;
+
+    public Triangle(Point ap, Point bp, Point cp) {
+        this.first = ap;
+        this.second = bp;
+        this.third = cp;
+    }
+
     /**
      * Метод вычисления периметра по длинам сторон.
      *
@@ -15,7 +26,7 @@ public class Triangle {
      * @param c расстояние между точками b c
      * @return Периметр.
      */
-    public static double period(double a, double b, double c) {
+    public double period(double a, double b, double c) {
         return (a + b + c) / 2;
     }
 
@@ -30,7 +41,7 @@ public class Triangle {
      *
      * @return Вернуть площадь, если треугольник существует или -1.
      */
-    public static double area(int x1, int y1, int x2, int y2, int x3, int y3) {
+    public  double area(double x1, double y1, double x2, double y2, double x3, double y3) {
         double rsl = -1;
         Point first = new Point(x1, y1);
         Point second = new Point(x2, y2);
@@ -57,19 +68,5 @@ public class Triangle {
 
     private boolean exist(double a, double b, double c) {
         return (a + c > b) && (c + b > a) && (b + a > c);
-    }
-
-    /** Метод проверяет можно ли построить треугольник  через вычисление площади
-     *
-     * @param x1 координаты первой точки по Х
-     * @param y1 координаты первой точки по У
-     * @param x2 координаты второй точки по Х
-     * @param y2 координаты второй точки по У
-     * @param x3 координаты третьей точки по Х
-     * @param y3 координаты третьей  точки по У
-     * @return  true or false
-     */
-    public static  boolean existing(int x1, int y1, int x2, int y2, int x3, int y3){
-        return area(x1, y1, x2, y2, x3, y3) != -1;
     }
 }
