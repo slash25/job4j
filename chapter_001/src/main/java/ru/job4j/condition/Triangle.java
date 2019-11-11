@@ -4,7 +4,8 @@ import java.lang.reflect.Array;
 
 public class Triangle {
 
-    private Point first;
+
+  /*  private Point first;
     private Point second;
     private Point third;
 
@@ -12,6 +13,9 @@ public class Triangle {
         this.first = ap;
         this.second = bp;
         this.third = cp;
+    }*/
+
+    public Triangle(double v, double v1, double v2) {
     }
 
     /**
@@ -26,7 +30,7 @@ public class Triangle {
      * @param c расстояние между точками b c
      * @return Периметр.
      */
-    public double period(double a, double b, double c) {
+    private double period(double a, double b, double c) {
         return (a + b + c) / 2;
     }
 
