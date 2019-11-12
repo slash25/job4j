@@ -4,18 +4,23 @@ import java.lang.reflect.Array;
 
 public class Triangle {
 
+    /**Поля объекта Triangle (координаты точек треугольника)
+     *
+     */
+    public Point first;
+    public Point second;
+    public Point third;
 
-  /*  private Point first;
-    private Point second;
-    private Point third;
-
+    /** Конструктор объекта Triangle
+     *
+     * @param ap first values
+     * @param bp second values
+     * @param cp third values
+     */
     public Triangle(Point ap, Point bp, Point cp) {
         this.first = ap;
         this.second = bp;
         this.third = cp;
-    }*/
-
-    public Triangle(double v, double v1, double v2) {
     }
 
     /**
