@@ -30,7 +30,7 @@ public class Triangle {
      * @param c расстояние между точками b c
      * @return Периметр.
      */
-    private double period(double a, double b, double c) {
+    public double period(double a, double b, double c) {
         return (a + b + c) / 2;
     }
 
