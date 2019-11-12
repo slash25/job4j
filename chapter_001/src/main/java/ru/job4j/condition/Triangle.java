@@ -1,7 +1,6 @@
 package ru.job4j.condition;
 
 import java.lang.reflect.Array;
-
 public class Triangle {
 
     /**Поля объекта Triangle (координаты точек треугольника)
