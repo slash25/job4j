@@ -19,11 +19,4 @@ public class PointTest {
         double result = a.distance3d(b);
         assertThat(result, is(2.0));
     }
-    @Test
-    public void Point3dv3() {
-        Point a = new Point(0, 0,0);
-        Point b = new Point(0, 0,0);
-        double result = a.distance3d(b);
-        assertThat(result, is(0.0));
-    }
 }

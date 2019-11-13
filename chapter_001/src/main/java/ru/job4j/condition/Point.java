@@ -38,15 +38,20 @@ public class Point {
      * pow - степень
      * sqrt - квадратный корень
      *
-     * @param that значение второй переменной
+     * @param that значение второй переменной c координатами (x,y)
      * @return distance
      */
 
     public double distance(Point that) {
         return sqrt(pow(this.y - that.y, 2) + pow(this.z - that.z, 2));
     }
+
+    /**Вычислим расстаяния между точками в трехмерном пространстве
+     *
+     * @param that значение второй переменной c координатами (x,y,z)
+     * @return distance
+     */
     public double distance3d(Point that){
         return sqrt(pow(this.x - that.x, 2) + pow(this.y - that.y,2) + pow(this.z - that.z,2));
     }
-
 }
