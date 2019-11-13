@@ -10,14 +10,14 @@ public class PointTest {
         Point a = new Point(1, 1,1);
         Point b = new Point(2, 2,2);
         double result = a.distance3d(b);
-        assertThat(result, is(1.5537739740300374));
+        assertThat(result, is(1.7320508075688772));
     }
     @Test
     public void Point3dv2() {
         Point a = new Point(5, 4,2);
         Point b = new Point(5, 4,0);
         double result = a.distance3d(b);
-        assertThat(result, is(1.4142135623730951));
+        assertThat(result, is(2.0));
     }
     @Test
     public void Point3dv3() {
