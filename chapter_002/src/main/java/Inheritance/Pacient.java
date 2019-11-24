@@ -1,28 +1,27 @@
 package Inheritance;
-public class Pacient extends Persona {
-
-    boolean Sportsman;
-    String HealthLevel;
+public class Pacient extends Persona  {
+    boolean sportsman;
+    String healthLevel;
 
     public Pacient(String name, String surname, String age, boolean sportsman, String healthLevel) {
         super(name, surname, age);
-        Sportsman = sportsman;
-        HealthLevel = healthLevel;
+        this.sportsman = sportsman;
+        this.healthLevel = healthLevel;
     }
 
     public boolean isSportsman() {
-        return Sportsman;
+        return sportsman;
     }
 
     public void setSportsman(boolean sportsman) {
-        Sportsman = sportsman;
+        this.sportsman = sportsman;
     }
 
     public String getHealthLevel() {
-        return HealthLevel;
+        return healthLevel;
     }
 
     public void setHealthLevel(String healthLevel) {
-        HealthLevel = healthLevel;
+        this.healthLevel = healthLevel;
     }
 }

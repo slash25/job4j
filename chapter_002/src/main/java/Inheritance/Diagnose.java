@@ -1,19 +1,16 @@
 package Inheritance;
 
-public class Diagnose extends Doctor {
-
+public class Diagnose  {
+    String lechenie;
     public String getLechenie() {
-        return Lechenie;
+        return lechenie;
     }
 
     public void setLechenie(String lechenie) {
-        Lechenie = lechenie;
+        this.lechenie = lechenie;
     }
 
     public Diagnose(String lechenie) {
-        Lechenie = lechenie;
+        this.lechenie = lechenie;
     }
-
-    String Lechenie;
-
 }

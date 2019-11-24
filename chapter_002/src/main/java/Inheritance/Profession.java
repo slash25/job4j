@@ -2,27 +2,18 @@ package Inheritance;
 
 public class Profession {
 
-    String name;
-    String surname;
-    String education;
-    String birthday;
+    String typeOfProfession;
 
-    public String getName() {
-        return name;
+    public Profession(String typeOfProfession) {
+        this.typeOfProfession = typeOfProfession;
     }
 
-    public String getSurname() {
-        return surname;
+    public String getTypeOfProfession() {
+        return typeOfProfession;
     }
 
-    public String getEducation() {
-        return education;
+    public void setTypeOfProfession(String typeOfProfession) {
+        this.typeOfProfession = typeOfProfession;
     }
-
-    public String getBirthday() {
-        return birthday;
-    }
-
-
 
 }
