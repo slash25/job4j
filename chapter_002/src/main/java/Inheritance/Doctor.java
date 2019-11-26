@@ -1,7 +1,7 @@
 package Inheritance;
 
 public class Doctor extends Profession {
-    Diagnose someDiagnose;
+   private Diagnose someDiagnose;
     public Doctor(String typeOfProfession, Diagnose someDiagnose) {
         super(typeOfProfession);
         this.someDiagnose = someDiagnose;

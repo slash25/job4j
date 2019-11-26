@@ -1,7 +1,7 @@
 package Inheritance;
 
 public class Diagnose  {
-    String lechenie;
+  private   String lechenie;
     public String getLechenie() {
         return lechenie;
     }

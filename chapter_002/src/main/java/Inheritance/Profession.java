@@ -2,7 +2,7 @@ package Inheritance;
 
 public class Profession {
 
-    String typeOfProfession;
+  private   String typeOfProfession;
 
     public Profession(String typeOfProfession) {
         this.typeOfProfession = typeOfProfession;

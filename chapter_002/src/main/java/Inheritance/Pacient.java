@@ -1,7 +1,7 @@
 package Inheritance;
 public class Pacient extends Persona  {
-    boolean sportsman;
-    String healthLevel;
+   private boolean sportsman;
+   private String healthLevel;
 
     public Pacient(String name, String surname, String age, boolean sportsman, String healthLevel) {
         super(name, surname, age);

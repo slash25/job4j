@@ -1,9 +1,9 @@
 package Inheritance;
 
 public class Persona {
-    String name;
-    String surname;
-    String age;
+   private String name;
+   private String surname;
+   private String age;
 
     public Persona(String name, String surname, String age) {
         this.name = name;
