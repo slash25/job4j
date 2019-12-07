@@ -1,6 +1,7 @@
 package ru.job4j.tracker;
 
 import java.lang.reflect.Array;
+import java.util.Arrays;
 import java.util.Random;
 
   class Tracker {
@@ -29,18 +30,17 @@ import java.util.Random;
      * @param id input id
      */
     public boolean delete(String id){
+        Item[] newArray = new Item[items.length];//10
+        System.arraycopy (items, 0, newArray, 0, items.length);
         boolean res = false;
         int countPos = 0;
         if (findById(id) != null){//если пользователь есть в массиве
             res = true;
-            for (Item updItem : this.items) {
-                if (updItem != null){
-                    this.items[countPos] = null;
+            for (int i=0; i < newArray.length; i++){
+                    newArray[i] = null;
                     break;
                 }
-                countPos ++;
             }
-        }
         return res;
     }
 
@@ -86,10 +86,7 @@ import java.util.Random;
      */
     public    Item[] findAll (){
         Item[] result = new Item[this.position];
-        for (int index = 0; index != this.position; index++){
-            result[index] = this.items[index];
-        }
-        return result;
+        return Arrays.copyOf(items, position);
     }
 
     /**
@@ -98,7 +95,6 @@ import java.util.Random;
      * @return Уникальный ключ.
      */
     private String generateId() {
-        //Реализовать метод генерации.
         Random rm = new Random();
         return String.valueOf(rm.nextLong() + System.currentTimeMillis());
     }
