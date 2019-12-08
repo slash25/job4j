@@ -30,15 +30,18 @@ import java.util.Random;
      * @param id input id
      */
     public boolean delete(String id){
-        Item[] newArray = new Item[items.length];//10
-        System.arraycopy (items, 0, newArray, 0, items.length);
+        Item[] newArray = new Item[items.length - 1];//10
+        System.arraycopy (items, 0, newArray, 0, items.length - 1);
         boolean res = false;
         int countPos = 0;
         if (findById(id) != null){//если пользователь есть в массиве
             res = true;
-            for (int i=0; i < newArray.length; i++){
-                    newArray[i] = null;
-                    break;
+            for (int i = 0; i < newArray.length; i++){
+                newArray[i].setId(id);
+                newArray[i].setName(null);
+                newArray[i].setDescription(null);
+                newArray[i].setCreate(0);
+                break;
                 }
             }
         return res;
@@ -49,14 +52,27 @@ import java.util.Random;
      * @param id input id
      * @return item
      */
-    public Item findById(String id){
+    public Item findById(String id) {
         for (Item item : this.items) {
-            if (item.getId().equals(id)){
-                return  item;
+            if (item != null) {
+                if (item.getId().equals(id)) {
+                    return item;
+                }
             }
         }
         return null;
     }
+
+      public Item findByName(String name) {
+          for (Item item : this.items) {
+              if (item != null) {
+                  if (item.getName().equals(name)) {
+                      return item;
+                  }
+              }
+          }
+          return null;
+      }
 
     /**Метод заменяет заявку найдя её по id
      *

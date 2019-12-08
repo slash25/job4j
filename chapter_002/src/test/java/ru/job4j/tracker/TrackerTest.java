@@ -33,8 +33,17 @@ public class TrackerTest {
         Tracker tracker = new Tracker();
         Item previous1 = new Item("test2","a","sd3",004);
         tracker.add(previous1);
-        assertThat(tracker.delete("test2"), is("a"));
+        assertThat(tracker.delete("test2"), is(false));
     }
+
+    @Test
+    public void findByName() {
+        Tracker tracker = new Tracker();
+        Item previous2 = new Item("test3","test","sd4",005);
+        tracker.add(previous2);
+        assertThat(tracker.findByName("test"), is(""));
+    }
+
     /**
      *
      */
