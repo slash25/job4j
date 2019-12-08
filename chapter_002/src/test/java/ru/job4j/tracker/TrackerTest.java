@@ -41,7 +41,7 @@ public class TrackerTest {
         Tracker tracker = new Tracker();
         Item previous2 = new Item("test3","test","sd4",005);
         tracker.add(previous2);
-        assertThat(tracker.findByName("test"), is(""));
+        assertThat(tracker.findByName("test"), is(previous2));
     }
 
     /**
@@ -57,6 +57,9 @@ public class TrackerTest {
         Item nextItem3 = new Item("test5","e","sd5",005);
         tracker.add(nextItem2);
         tracker.add(nextItem3);
-        assertThat(tracker.findAll(), is("some value"));
+        assertThat(tracker.findAll(), is(tracker));
     }
+
+
+
 }
