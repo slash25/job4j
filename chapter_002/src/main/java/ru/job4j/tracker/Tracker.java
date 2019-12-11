@@ -19,7 +19,7 @@ import java.util.Random;
      * Метод реализаущий добавление заявки в хранилище
      * @param item новая заявка
      */
-    public Item add(Item item) {
+     Item add(Item item) {
         item.setId(this.generateId());
         this.items[this.position++] = item;
         return item;
@@ -29,21 +29,18 @@ import java.util.Random;
      *
      * @param id input id
      */
-    public boolean delete(String id){
-        Item[] newArray = new Item[items.length - 1];//10
-        System.arraycopy (items, 0, newArray, 0, items.length - 1);
+     boolean delete(String id){
+        Item[] newArray = new Item[this.position];//10
+
         boolean res = false;
-        int countPos = 0;
-        if (findById(id) != null){//если пользователь есть в массиве
-            res = true;
-            for (int i = 0; i < newArray.length; i++){
-                newArray[i].setId(id);
-                newArray[i].setName(null);
-                newArray[i].setDescription(null);
-                newArray[i].setCreate(0);
+        for (int count = 0; count < this.position; count++) {
+            if (findById(id) != null) {//если пользователь есть в массиве
+                System.arraycopy(items, count + 1, newArray, 0, this.position);
+                //нужно сместить массив на 1 ячейку влево а предудущая ячейка стирается
+                res = true;
                 break;
-                }
             }
+        }
         return res;
     }
 
@@ -52,7 +49,7 @@ import java.util.Random;
      * @param id input id
      * @return item
      */
-    public Item findById(String id) {
+     Item findById(String id) {
         for (Item item : this.items) {
             if (item != null) {
                 if (item.getId().equals(id)) {
@@ -63,16 +60,24 @@ import java.util.Random;
         return null;
     }
 
-      public Item findByName(String name) {
-          for (Item item : this.items) {
-              if (item != null) {
-                  if (item.getName().equals(name)) {
-                      return item;
+      /**Метод возвращает элементы у которых совпадает имя
+       *
+       * @param name input name
+       * @return result
+       */
+      Item[] findByName(String name) {
+          Item[] result = new Item[this.position];
+          int j = 0;
+              for (Item item : this.items) {
+                  if (item != null) {
+                      if (item.getName().equals(name)) {
+                          result[j] = item;
+                      }
+                      j++;
                   }
               }
+              return result;
           }
-          return null;
-      }
 
     /**Метод заменяет заявку найдя её по id
      *
@@ -87,6 +92,7 @@ import java.util.Random;
             res = true;
             for (Item updItem : this.items) {
                 if (updItem.getId().equals(id)){
+                    item.setId(id);
                     this.items[countPos] = item;
                     break;
                 }
@@ -114,4 +120,12 @@ import java.util.Random;
         Random rm = new Random();
         return String.valueOf(rm.nextLong() + System.currentTimeMillis());
     }
-}
+
+      @Override
+      public String toString() {
+          return "Tracker{" +
+                  "items=" + Arrays.toString(items) +
+                  ", position=" + position +
+                  '}';
+      }
+  }

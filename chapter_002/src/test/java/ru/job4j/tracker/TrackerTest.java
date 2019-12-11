@@ -1,6 +1,10 @@
 package ru.job4j.tracker;
 
+import com.sun.xml.internal.ws.api.model.wsdl.WSDLOutput;
 import org.junit.Test;
+
+import java.util.Arrays;
+
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 
@@ -31,22 +35,26 @@ public class TrackerTest {
     @Test
     public void deleteById() {
         Tracker tracker = new Tracker();
-        Item previous1 = new Item("test2","a","sd3",004);
+        Item previous = new Item("001","e","sd2",003);
+        Item previous1 = new Item("002","a","sd3",004);
+        tracker.add(previous);
         tracker.add(previous1);
-        assertThat(tracker.delete("test2"), is(false));
+        tracker.delete(previous.getId());
+        System.out.println(tracker);
     }
 
     @Test
     public void findByName() {
         Tracker tracker = new Tracker();
         Item previous2 = new Item("test3","test","sd4",005);
+        Item previous3 = new Item("test4","test","sd5",006);
+        Item previous4 = new Item("test4","proba","sd6",007);
         tracker.add(previous2);
-        assertThat(tracker.findByName("test"), is(previous2));
+        tracker.add(previous3);
+        tracker.add(previous4);
+        System.out.println(Arrays.deepToString(tracker.findByName("test")));
     }
 
-    /**
-     *
-     */
     @Test
     public void findAll() {
         Tracker tracker = new Tracker();
@@ -57,9 +65,6 @@ public class TrackerTest {
         Item nextItem3 = new Item("test5","e","sd5",005);
         tracker.add(nextItem2);
         tracker.add(nextItem3);
-        assertThat(tracker.findAll(), is(tracker));
+        System.out.println(Arrays.toString(tracker.findAll()));
     }
-
-
-
 }
