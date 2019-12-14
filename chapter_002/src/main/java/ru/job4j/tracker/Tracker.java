@@ -32,35 +32,35 @@ class Tracker {
      */
     boolean delete(String id) {
         boolean res = false;
-        for (int count = 0; count < items.length; count++)
-            if (findById(id) != null) {//если пользователь есть в массиве
-                for (Item it : items) {
-                    if (it.getId().equals(id)) {
-                        items[count] = null;
-                        break;
-                    }
+        int count = 0;
+        if (findById(id) != null) {//если пользователь есть в массиве
+            for (Item it : items) {
+                if (it.getId().equals(id)) {
+                    items[count] = null;
+                    System.arraycopy(items, count + 1, items, count, position - count);
+                    position--;
+                    res = true;
+                    return res;
                 }
+                count++;
                 //нужно сместить массив на 1 ячейку влево а предудущая ячейка стирается
-                System.arraycopy(items, count+1, items, count, position - count);
-                position--;
-                res = true;
-                return res;
             }
+        }
         return res;
     }
 
-    /**Метод вычисляющий количество не пустых ячеек
+    /**
+     * Метод вычисляющий количество не пустых ячеек
      *
      * @param item value
      * @return i
      */
     int countNotNull(Item[] item) {
         int i = 0;
-        for (Item it : item) {
+        for (Item it : item)
             if (it != null) {
                 i++;
             }
-        }
         return i;
     }
 
@@ -75,7 +75,6 @@ class Tracker {
             if (item.getId().equals(id)) {
                 return item;
             }
-            break;
         }
         return null;
     }
@@ -89,15 +88,12 @@ class Tracker {
     Item[] findByName(String name) {
         Item[] result = new Item[this.position];
         int j = 0;
-        for (Item item : this.items) {
-            if (item != null) {
-                if (item.getName().equals(name)) {
-                    result[j] = item;
-                }
-                j++;
+        for (int i = 0; i < this.position; i++) {
+            if (items[i].getName().equals(name)) {
+                result[j++] = items[i];
             }
         }
-        return Arrays.copyOf(result, countNotNull(result));
+        return Arrays.copyOf(result, j);
     }
 
     /**
@@ -108,16 +104,16 @@ class Tracker {
      * @return res
      */
     public boolean replace(String id, Item item) {
+        Item[] result = new Item[this.position];
         int countPos = 0;
         boolean res = false;
-        for (Item updItem : this.items) {
-            if (updItem.getId().equals(id)) {
+        for (int i = 0; i < this.position; i++) {
+            if (items[i].getId().equals(id)) {
                 item.setId(id);
-                this.items[countPos] = item;
+                result[countPos++] = item;
                 res = true;
-                break;
+                Arrays.copyOf(result, countPos);
             }
-            countPos++;
         }
         return res;
     }
