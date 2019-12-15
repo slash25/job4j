@@ -32,37 +32,22 @@ class Tracker {
      */
     boolean delete(String id) {
         boolean res = false;
-        int count = 0;
         if (findById(id) != null) {//если пользователь есть в массиве
-            for (Item it : items) {
-                if (it.getId().equals(id)) {
+            for (int count = 0; count < this.position; count++){
+                if (items[count].getId().equals(id)) {
                     items[count] = null;
+                    //нужно сместить массив на 1 ячейку влево а предудущая ячейка стирается
                     System.arraycopy(items, count + 1, items, count, position - count);
                     position--;
                     res = true;
                     return res;
                 }
-                count++;
-                //нужно сместить массив на 1 ячейку влево а предудущая ячейка стирается
+
             }
         }
         return res;
     }
 
-    /**
-     * Метод вычисляющий количество не пустых ячеек
-     *
-     * @param item value
-     * @return i
-     */
-    int countNotNull(Item[] item) {
-        int i = 0;
-        for (Item it : item)
-            if (it != null) {
-                i++;
-            }
-        return i;
-    }
 
     /**
      * Метод находит заявку по id
@@ -124,7 +109,6 @@ class Tracker {
      * @return result
      */
     public Item[] findAll() {
-        //Item[] result = new Item[this.position];
         return Arrays.copyOf(items, position);
     }
 
