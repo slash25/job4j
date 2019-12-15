@@ -32,7 +32,6 @@ class Tracker {
      */
     boolean delete(String id) {
         boolean res = false;
-        if (findById(id) != null) {//если пользователь есть в массиве
             for (int count = 0; count < this.position; count++){
                 if (items[count].getId().equals(id)) {
                     items[count] = null;
@@ -42,8 +41,6 @@ class Tracker {
                     res = true;
                     return res;
                 }
-
-            }
         }
         return res;
     }
@@ -97,7 +94,6 @@ class Tracker {
                 item.setId(id);
                 result[countPos++] = item;
                 res = true;
-                Arrays.copyOf(result, countPos);
             }
         }
         return res;
