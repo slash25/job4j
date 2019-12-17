@@ -53,9 +53,9 @@ class Tracker {
      * @return item
      */
     Item findById(String id) {
-        for (Item item : this.items) {
-            if (item.getId().equals(id)) {
-                return item;
+        for (int i = 0; i < this.position; i++ ) {
+            if (items[i].getId().equals(id)) {
+                return items[i];
             }
         }
         return null;
@@ -86,13 +86,11 @@ class Tracker {
      * @return res
      */
     public boolean replace(String id, Item item) {
-        Item[] result = new Item[this.position];
         int countPos = 0;
         boolean res = false;
         for (int i = 0; i < this.position; i++) {
             if (items[i].getId().equals(id)) {
                 item.setId(id);
-                result[countPos++] = item;
                 res = true;
             }
         }
