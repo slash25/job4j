@@ -17,6 +17,12 @@ public class Item {
     private  String description;
     private  long create;
 
+    public Item(String name) {
+        this.name = name;
+    }
+
+
+
     public Item(String id, String name, String description, long create) {
         this.id = id;
         this.name = name;
