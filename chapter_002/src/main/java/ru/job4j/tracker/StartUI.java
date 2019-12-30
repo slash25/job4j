@@ -10,22 +10,23 @@ public class StartUI {
             System.out.print("Select: ");
             int select = Integer.valueOf(scanner.nextLine());
             switch (select) {
-                case (0): {
+                case (0):
                     System.out.println("==== Create a new Item ====");
                     System.out.print("Enter name: ");
                     String name = scanner.nextLine();
                     Item item = new Item(name);
-                    if (tracker.add(item) != null)
+                    if (tracker.add(item) != null) {
                         System.out.println("New Item was created");
-                    else
+                    } else {
                         System.out.println("New Item was not created");
-                }
-                case (1): {
+                    }
+                    break;
+                case (1):
                     System.out.println("==== Show all items ====");
                     System.out.println(tracker.findAll());
                     System.out.println("All Items were shown");
-                }
-                case (2): {
+                    break;
+                case (2):
                     System.out.println("==== Edit Item ====");
                     System.out.println("Edit item");
                     System.out.println("Enter id: ");
@@ -36,40 +37,48 @@ public class StartUI {
                     Item it = new Item(itn);
                     if (tracker.replace(idn, it)) {
                         System.out.println("Item was edited");
-                    } else
+                    } else {
                         System.out.println("Item was not edited");
-                }
-                case (3): {
+                    }
+                    break;
+                case (3):
                     System.out.println("==== Delete Item ====");
                     System.out.println("Enter id: ");
-                    String idn = scanner.nextLine();
-                    if (tracker.delete(idn)) {
+                    String idn2 = scanner.nextLine();
+                    if (tracker.delete(idn2)) {
                         System.out.println("Item was deleted");
-                    } else
+                    } else {
                         System.out.println("Item was not deleted");
-                }
-                case (4): {
+                    }
+                    break;
+
+                case (4):
                     System.out.println("==== Find Item by id ====");
                     System.out.println("Enter id: ");
-                    String idn = scanner.nextLine();
-                    if (tracker.findById(idn) != null)
+                    String idn3 = scanner.nextLine();
+                    if (tracker.findById(idn3) != null) {
                         System.out.println("Item by id was finded");
-                    else System.out.println("Item by id was finded");
-                }
-                case (5): {
+                    } else {
+                        System.out.println("Item by id was finded");
+                    }
+                    break;
+
+                case (5):
                     System.out.println("==== Find Items by Name ====");
                     System.out.print("Enter name: ");
-                    String name = scanner.nextLine();
-                    Item item = new Item(name);
-                    if (tracker.findByName(name) != null)
+                    String name2 = scanner.nextLine();
+                    if (tracker.findByName(name2) != null) {
                         System.out.println("Item by name was finded");
-                    else
+                    } else {
                         System.out.println("Item by name was finded");
-                }
-                case (6): {
+                    }
+                    break;
+
+                case (6):
                     System.out.println("==== You exit from program ====");
                     run = false;
-                }
+                default:
+                    break;
             }
         }
     }

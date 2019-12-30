@@ -32,7 +32,7 @@ class Tracker {
      */
     boolean delete(String id) {
         boolean res = false;
-            for (int count = 0; count < this.position; count++){
+            for (int count = 0; count < this.position; count++) {
                 if (items[count].getId().equals(id)) {
                     items[count] = null;
                     //нужно сместить массив на 1 ячейку влево а предудущая ячейка стирается
@@ -53,7 +53,7 @@ class Tracker {
      * @return item
      */
     Item findById(String id) {
-        for (int i = 0; i < this.position; i++ ) {
+        for (int i = 0; i < this.position; i++) {
             if (items[i].getId().equals(id)) {
                 return items[i];
             }
@@ -119,9 +119,7 @@ class Tracker {
 
     @Override
     public String toString() {
-        return "Tracker{" +
-                "items=" + Arrays.toString(items) +
-                ", position=" + position +
-                '}';
+        return "Tracker{" + "items=" + Arrays.toString(items)
+                + ", position=" + position + '}';
     }
 }

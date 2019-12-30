@@ -4,12 +4,9 @@ import java.util.Objects;
 public class Item {
     @Override
     public String toString() {
-        return "Item{" +
-                "id='" + id + '\'' +
-                ", name='" + name + '\'' +
-                ", description='" + description + '\'' +
-                ", create=" + create +
-                '}';
+        return "Item{" + "id='" + id + '\'' + ", name='" + name + '\''
+                + ", description='" + description + '\''
+                + ", create=" + create + '}';
     }
 
     private String id;
