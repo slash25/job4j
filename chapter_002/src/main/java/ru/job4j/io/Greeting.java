@@ -10,7 +10,7 @@ public class Greeting {
         System.out.println(answer(answerRand));
     }
 
-    static String answer(int value) {
+   private static String answer(int value) {
         String answer;
         switch (value) {
             case (0):
