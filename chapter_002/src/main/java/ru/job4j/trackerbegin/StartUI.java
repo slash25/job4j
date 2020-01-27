@@ -127,7 +127,7 @@ public class StartUI {
         //Вызов не статического метода. Необходимо обратиться через объект.
         new StartUI().init(input, tracker);
         // Вызов статического метода. Обращаемся через класс.
-        StartUI.createItem(input, tracker);
+        //StartUI.createItem(input, tracker);
     }
 }
 
