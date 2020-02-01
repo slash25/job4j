@@ -19,7 +19,7 @@ public class Tracker {
      *
      * @param item новая заявка
      */
-    Item add(Item item) {
+    public Item add(Item item) {
         item.setId(this.generateId());
         this.items[this.position++] = item;
         return item;
@@ -52,7 +52,7 @@ public class Tracker {
      * @param id input id
      * @return item
      */
-    Item findById(String id) {
+  public   Item findById(String id) {
         for (int i = 0; i < this.position; i++) {
             if (items[i].getId().equals(id)) {
                 return items[i];
