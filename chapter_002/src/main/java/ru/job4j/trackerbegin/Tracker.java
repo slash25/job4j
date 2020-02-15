@@ -19,7 +19,7 @@ public class Tracker {
      *
      * @param item новая заявка
      */
-    public Item add(Item item) {
+    Item add(Item item) {
         item.setId(this.generateId());
         this.items[this.position++] = item;
         return item;
@@ -52,7 +52,7 @@ public class Tracker {
      * @param id input id
      * @return item
      */
-  public   Item findById(String id) {
+    Item findById(String id) {
         for (int i = 0; i < this.position; i++) {
             if (items[i].getId().equals(id)) {
                 return items[i];
@@ -85,15 +85,16 @@ public class Tracker {
      * @param item item
      * @return res
      */
-    public boolean replace(String id, Item item) {
+    boolean replace(String id, Item item) {
         int countPos = 0;
-        boolean res = false;
+        boolean res = true;
         for (int i = 0; i < this.position; i++) {
             if (items[i].getId().equals(id)) {
                 item.setId(id);
-                res = true;
+               return res;
             }
         }
+        res = false;
         return res;
     }
 
@@ -102,7 +103,7 @@ public class Tracker {
      *
      * @return result
      */
-    public Item[] findAll() {
+    Item[] findAll() {
         return Arrays.copyOf(items, position);
     }
 

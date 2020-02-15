@@ -13,7 +13,7 @@ public class Item {
     private  String description;
     private  long create;
 
-    public Item(String name) {
+    Item(String name) {
         this.name = name;
     }
 
