@@ -90,6 +90,7 @@ public class Tracker {
         boolean res = true;
         for (int i = 0; i < this.position; i++) {
             if (items[i].getId().equals(id)) {
+                items[i] = item;
                 item.setId(id);
                return res;
             }
