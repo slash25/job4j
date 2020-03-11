@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class FindAllAction implements UserAction {
     @Override
     public String name() {
-      return "==== Show all items ====";
+      return "==== Find All ====";
     }
 
     @Override
@@ -13,8 +13,8 @@ public class FindAllAction implements UserAction {
 
         Item[] allItems;
         allItems = tracker.findAll();
-        for (Item it : allItems) {
-            System.out.println(it);
+        for (Item item : tracker.findAll()) {
+            System.out.println((String.format("%s %s", item.getId(), item.getName())));
         }
         return true;
     }
