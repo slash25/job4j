@@ -51,7 +51,7 @@ public class UserStore {
         users[1] = new User("Dmitriy Galkin", false);
         users[2] = new User("Dj", true);
 
-        User user = findUser(users, "Max Petrov");
+        User user = findUser(users, "Petr Arsentev");
 
         try {
             if (validate(user)) {
