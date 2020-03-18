@@ -4,7 +4,7 @@ public class UserStore {
 
     //findUser - если пользователя не нашли в списке, то кинуть исключение UserNotFoundException.
 
-    public static User findUser(User[] user, String login) throws UserNotFoundException {
+    private static User findUser(User[] user, String login) throws UserNotFoundException {
 
         for (User us : user) {
             if ((us.getUsername().equals(login))) {
