@@ -2,7 +2,7 @@ package ru.job4j.pseudo;
 
 import java.util.StringJoiner;
 
-public class Triangle implements Shape {
+public class TriangleNew implements ShapeNew {
     @Override
     public String draw() {
         StringJoiner pic = new StringJoiner(System.lineSeparator());

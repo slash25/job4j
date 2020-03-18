@@ -2,8 +2,6 @@ package ru.job4j.pseudo;
 
 import org.junit.Test;
 
-import java.util.StringJoiner;
-
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
@@ -13,10 +11,10 @@ import static org.junit.Assert.assertThat;
  * @since 0.1
  */
 
-public class SquareTest {
+public class SquareTestNew {
     @Test
     public void whenDrawSquare() {
-        Square square = new Square();
+        SquareNew square = new SquareNew();
         assertThat(
                 square.draw(),
                 is(

@@ -9,7 +9,7 @@ import java.util.StringJoiner;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
-public class PaintTest {
+public class PaintTestNew {
     @Test
 
     public void whenDrawSquare() {
@@ -21,7 +21,7 @@ public class PaintTest {
         System.setOut(new PrintStream(out));
         // выполняем действия пишушиее в консоль.
 
-        new Paint().draw(new Square());
+        new PaintNew().draw(new SquareNew());
 
         //5. Сравниваем значения.
         assertThat(
@@ -53,7 +53,7 @@ public class PaintTest {
         System.setOut(new PrintStream(out));
         // выполняем действия пишушиее в консоль.
 
-        new Paint().draw(new Triangle());
+        new PaintNew().draw(new TriangleNew());
         assertThat(
                 new String(out.toByteArray()),
                 is(
@@ -82,7 +82,7 @@ public class PaintTest {
         System.setOut(new PrintStream(out));
         // выполняем действия пишушиее в консоль.
 
-        new Paint().draw(new Romb());
+        new PaintNew().draw(new RombNew());
         assertThat(
                 new String(out.toByteArray()),
                 is(
