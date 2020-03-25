@@ -1,6 +1,7 @@
-package ru.job4j.trackerbegin;
+package ru.job4j.trackerbegintest;
 
 import org.junit.Test;
+import ru.job4j.trackerbegin.*;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
@@ -21,9 +22,6 @@ public class StartUITest {
       new StartUI().init(input, new Tracker(), new UserAction[]{action});
       assertThat(action.isCall(), is(true));
    }
-
-
-
 
    /* Проверка метода showMenu, который печатает вывод меню*/
    @Test
@@ -48,6 +46,4 @@ public class StartUITest {
       //Вернем системный вывод на консоль
       System.setOut(def);
    }
-
-
 }

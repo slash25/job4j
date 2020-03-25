@@ -24,7 +24,7 @@ public class ValidateInput extends ConsoleInput {
             try {
                 value = super.askInt(question, max);
                 invalid = false;
-            } catch (IllegalStateException moe) {
+            } catch (IllegalStateException moe)  { //метод вызывает с не корректными параметрами
                 System.out.println("Please select key from menu. ");
             } catch (NumberFormatException nfe) {
                 System.out.println("Please enter validate data again. ");
