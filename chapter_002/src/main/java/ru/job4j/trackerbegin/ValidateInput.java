@@ -1,5 +1,5 @@
 package ru.job4j.trackerbegin;
-
+//класс ValidateInput  получает данные из системы до тех пор, пока не введут правильные символы.
 public class ValidateInput extends ConsoleInput {
     @Override
     public int askInt(String question) {
@@ -13,6 +13,7 @@ public class ValidateInput extends ConsoleInput {
                 System.out.println("Please enter validate data again. ");
             }
         } while (invalid);
+
         return value;
     }
 

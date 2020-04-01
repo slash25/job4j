@@ -17,7 +17,7 @@ public class ValidateInputTest {
         System.setOut(new PrintStream(mem));
 
         //Выполним действие с выводом на консоль
-        String[] data = {"one", "1"};
+        String[] data = {"test"};
         ValidateInput input = new ValidateStubInput(data);
         input.askInt("Enter");
 
@@ -30,4 +30,27 @@ public class ValidateInputTest {
         //Вернем системный вывод на консоль
         System.setOut(out);
     }
+
+    @Test
+    public void whenValidInput() {
+        //Заменим вывод на наш буфер
+        ByteArrayOutputStream mem = new ByteArrayOutputStream();
+        PrintStream out = System.out;
+        System.setOut(new PrintStream(mem));
+
+        //Выполним действие с выводом на консоль
+        String[] data = {"one", "two", "three"};
+        ValidateInput input = new ValidateStubInput(data);
+        input.askInt("Enter");
+
+        //Проверим содержимое вывода
+        assertThat(
+                mem,
+                is(String.format("1"))
+        );
+
+        //Вернем системный вывод на консоль
+        System.setOut(out);
+    }
+
 }

@@ -12,7 +12,7 @@ public class FindByIdAction implements UserAction {
         Item item;
         item = tracker.findById(idn2);
         if (item != null) {
-                System.out.println(item);
+                System.out.println(item.getId() + " " + item.getName());
         } else {
             System.out.println("Item with id: " + idn2 + " wasn't  finded");
         }
