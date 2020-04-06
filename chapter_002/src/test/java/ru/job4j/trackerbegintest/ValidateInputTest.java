@@ -46,7 +46,7 @@ public class ValidateInputTest {
         //Проверим содержимое вывода
         assertThat(
                 mem,
-                is(String.format("1"))
+                is(String.format("Please enter validate data again.%n"))
         );
 
         //Вернем системный вывод на консоль
