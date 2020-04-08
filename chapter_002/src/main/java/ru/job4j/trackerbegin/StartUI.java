@@ -30,7 +30,8 @@ public class StartUI {
         System.out.println("7. Exit Program");
  */
     public static void main(String[] args) {
-        Input validate = new ValidateInput();
+        Input input = new ConsoleInput();
+        Input validate = new ValidateInput(input);
         Tracker tracker = new Tracker();
         UserAction[] actions = {
                 new CreateAction(), new FindAllAction(), new EditAction(),

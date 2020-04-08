@@ -1,13 +1,15 @@
 package ru.job4j.trackerbegintest;
 
 import org.junit.Test;
+import ru.job4j.trackerbegin.StubInput;
 import ru.job4j.trackerbegin.ValidateInput;
-import ru.job4j.trackerbegin.ValidateStubInput;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
+
+
 public class ValidateInputTest {
     @Test
     public void whenInvalidInput() {
@@ -17,8 +19,9 @@ public class ValidateInputTest {
         System.setOut(new PrintStream(mem));
 
         //Выполним действие с выводом на консоль
-        String[] data = {"test"};
-        ValidateInput input = new ValidateStubInput(data);
+        ValidateInput input = new ValidateInput(
+                new StubInput(new String[] {"one", "1"})
+        );
         input.askInt("Enter");
 
         //Проверим содержимое вывода
@@ -39,8 +42,9 @@ public class ValidateInputTest {
         System.setOut(new PrintStream(mem));
 
         //Выполним действие с выводом на консоль
-        String[] data = {"one", "two", "three"};
-        ValidateInput input = new ValidateStubInput(data);
+        ValidateInput input = new ValidateInput(
+                new StubInput(new String[] {"one", "two", "three"})
+        );
         input.askInt("Enter");
 
         //Проверим содержимое вывода
