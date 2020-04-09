@@ -16,13 +16,15 @@ public class ConsoleInput implements Input {
     }
 
     //В методе askInt(String question, int max) мы проверяем диапазон и выкидываем исключение.
+
+    //Здесь производиться проверка данных. Если данные введены верно,
+    // то вернуть значение, если нет, то кинуть исключение.
     @Override
-    public int askInt(String question, int max) {
-        int select = askInt(question);
-        if (select >= 0 && select < max) {
+        public int askInt(String question, int max) {
+            int select = askInt(question);
+            if (select < 0 || select >= max) {
+                throw new IllegalStateException(String.format("Out of about %s > [0, %s]", select, max));
+            }
             return select;
-        } else {
-            throw new IllegalStateException(String.format("Out of about %s > [0, %s]", select, max));
-        }
     }
 }
