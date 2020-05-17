@@ -1,0 +1,9 @@
+CREATE TABLE OrderDetails(
+OrderID NUMBER(10),
+CONSTRAINT Orders_FK FOREIGN KEY (OrderID) REFERENCES Orders (OrderID),
+ProductID NUMBER(10),
+CONSTRAINT Prod_FK FOREIGN KEY (ProductID) REFERENCES Products (ProductID),
+UnitPrice NUMBER(5,2),
+Quantity NUMBER(5),
+Discount NUMBER(4)
+);

@@ -1,0 +1,8 @@
+CREATE TABLE Categories(
+--CONSTRAINT CONST-NAME CONSTRAINT TYPE (COLUMN NAME)
+CategoryID INT,
+CONSTRAINT Categories_pk PRIMARY KEY (CategoryID),
+Picture CHAR(1) CHECK (Picture IN ('N','Y')),
+CategoryName NVARCHAR2(15),
+Description NVARCHAR2(200)
+);

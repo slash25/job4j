@@ -1,0 +1,21 @@
+CREATE TABLE Orders (
+--COLUMN NAME COLUMN TYPE OPTIONAL PARAMS
+OrderID INT,
+CONSTRAINT Orders_ID PRIMARY KEY (OrderID),
+CustomerID NUMBER(15),
+CONSTRAINT Customers_FK FOREIGN KEY (CustomerID) REFERENCES Customers (CustomerID),
+EmployeeID NUMBER,
+CONSTRAINT Employees_FK FOREIGN KEY (EmployeeID) REFERENCES Employees (EmployeeID),
+OrderDate TIMESTAMP,
+RequiredDate TIMESTAMP,
+ShippedDate TIMESTAMP,
+ShipVia NUMBER(15),
+CONSTRAINT Shippers_FK FOREIGN KEY (ShipVia) REFERENCES Shippers (ShipperID),
+Freight NVARCHAR2(20),
+ShipName NVARCHAR2(15),
+ShipAddress NVARCHAR2(30),
+ShipCity NVARCHAR2(15),
+ShipRegion NVARCHAR2(15),
+ShipPostalCode NUMBER(15),
+ShipCountry NVARCHAR2(15)
+);

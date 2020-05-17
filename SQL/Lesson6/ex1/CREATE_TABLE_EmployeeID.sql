@@ -1,0 +1,21 @@
+CREATE TABLE Employees(
+--COLUMN NAME COLUMN TYPE OPTIONAL PARAMS
+EmployeeID INT,
+CONSTRAINT Employees_ID PRIMARY KEY (EmployeeID),
+LastName VARCHAR2(20),
+FirstName VARCHAR2(20),
+Title VARCHAR2(30),
+TitleOfCourtesy VARCHAR2(30),
+BirthDate TIMESTAMP,
+HireDate TIMESTAMP,
+Address VARCHAR2(30),
+City VARCHAR2(10),
+Region VARCHAR2(20),
+PostalCode NUMBER(10),
+Country VARCHAR2(15),
+HomePhone NUMBER(15),
+Extension VARCHAR2(10),
+Photo VARCHAR2(10),
+Notes VARCHAR2(10),
+ReportsTo VARCHAR2(30)
+);

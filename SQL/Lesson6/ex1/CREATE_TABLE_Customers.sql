@@ -1,0 +1,15 @@
+CREATE TABLE Customers (
+--COLUMN NAME COLUMN TYPE OPTIONAL PARAMS
+CustomerID INT,
+CONSTRAINT Customers_ID PRIMARY KEY (CustomerID),
+CompanyName VARCHAR2(20),
+ContactName VARCHAR2(20),
+ContactTitle VARCHAR2(30),
+Address VARCHAR2(20),
+City VARCHAR2(15),
+Region VARCHAR2(15),
+PostalCode NUMBER(10),
+Country VARCHAR2(15),
+Phone NUMBER(20),
+Fax NUMBER(20)
+);
