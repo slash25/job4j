@@ -1,0 +1,9 @@
+CREATE TABLE forumCategories(
+--CONSTRAINT CONST-NAME CONSTRAINT TYPE (COLUMN NAME)
+id INT,
+CONSTRAINT forumCategories_pk PRIMARY KEY (id),
+title VARCHAR(64),
+description NVARCHAR2(100),
+dates TIMESTAMP,
+ip VARCHAR(20)
+);

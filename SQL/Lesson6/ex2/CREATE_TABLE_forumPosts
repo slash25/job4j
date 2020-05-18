@@ -1,0 +1,18 @@
+CREATE TABLE forumPosts(
+--CONSTRAINT CONST-NAME CONSTRAINT TYPE (COLUMN NAME)
+id INT,
+CONSTRAINT forumPosts_id PRIMARY KEY (id),
+title CLOB,
+fp_content NVARCHAR2(200),
+is_Poll CHAR(1) CHECK (is_Poll IN ('N','Y')),
+dates TIMESTAMP,
+ip VARCHAR(20),
+idSubcategory INT,
+--foreign key это ссылка на уникальный идентификатор другой таблицы
+--CONSTRAINT const_name FOREIGN KEY (column_name) REFERENCES foreign_table_name (foreign_table_pk)
+CONSTRAINT idSubcategory_FK FOREIGN KEY (idSubcategory) REFERENCES forumSubcategories (id),
+idUser INT,
+CONSTRAINT idUser_FK FOREIGN KEY (idUser) REFERENCES users (id),
+parentPost INT,
+CONSTRAINT parentPosts_FK FOREIGN KEY (parentPost) REFERENCES parentPosts(id)
+);

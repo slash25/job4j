@@ -1,0 +1,9 @@
+CREATE TABLE forumPollsOptions(
+--COLUMN NAME COLUMN TYPE OPTIONAL PARAMS
+id INT,
+CONSTRAINT forumPollsOptions_ID PRIMARY KEY (id),
+title VARCHAR2(64),
+dates TIMESTAMP,
+idPost INT,
+CONSTRAINT forumPosts_FK FOREIGN KEY (idPost) REFERENCES forumPosts (id)
+);

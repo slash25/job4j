@@ -1,0 +1,11 @@
+CREATE TABLE forumPollsOptionVotes(
+--CONSTRAINT CONST-NAME CONSTRAINT TYPE (COLUMN NAME)
+id INT,
+CONSTRAINT forumPollsOptionVotes_pk PRIMARY KEY (id),
+idPollOption INT,
+CONSTRAINT forumPollsOption_FK FOREIGN KEY (idPollOption) REFERENCES forumPollsOptions (id),
+idUser INT,
+CONSTRAINT users_FK FOREIGN KEY (idUser) REFERENCES users (id),
+dates TIMESTAMP,
+ip VARCHAR(20)
+);

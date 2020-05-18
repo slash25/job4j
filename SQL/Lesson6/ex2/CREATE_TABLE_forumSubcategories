@@ -1,0 +1,11 @@
+CREATE TABLE forumSubcategories(
+--CONSTRAINT CONST-NAME CONSTRAINT TYPE (COLUMN NAME)
+id INT,
+CONSTRAINT forumSubcategories_pk PRIMARY KEY (id),
+idCategory INT,
+CONSTRAINT forumSubcategories_FK FOREIGN KEY (idCategory) REFERENCES forumCategories (id),
+title VARCHAR(45),
+description NVARCHAR2(100),
+dates TIMESTAMP,
+ip VARCHAR(20)
+);
