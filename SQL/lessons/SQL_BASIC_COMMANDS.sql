@@ -1,0 +1,113 @@
+--INSERT
+INSERT INTO ORDERS
+VALUES(1001, 'tool2212', 140, TO_DATE('2019/05/05 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), TO_DATE('2019/05/05 23:05:47', 'yyyy/mm/dd hh24:mi:ss'));
+INSERT INTO ORDERS
+VALUES(1002, 'toy', 140, TO_DATE('2019/05/05 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), TO_DATE('2019/05/05 23:05:47', 'yyyy/mm/dd hh24:mi:ss'));
+INSERT INTO ORDERS
+VALUES(1003, 'smallcar', 140, TO_DATE('2019/05/05 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), TO_DATE('2019/05/05 23:05:47', 'yyyy/mm/dd hh24:mi:ss'));
+INSERT INTO ORDERS
+VALUES(1004, 'bycikle', 150, TO_DATE('2020/05/05 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), TO_DATE('2020/05/05 23:05:47', 'yyyy/mm/dd hh24:mi:ss'));
+
+
+--SELECT
+SELECT * FROM ORDERS;
+SELECT * FROM ORDERS WHERE price = 140;
+SELECT * FROM ORDERS WHERE product_name = 'toy' AND price < 200 AND price > 100;
+SELECT * FROM ORDERS WHERE product_name = 'agdhjg' OR price < 200;
+
+--DELETE
+DELETE  FROM ORDERS; -- DELETE ALL DATA
+
+DROP TABLE ORDERSN_OLD;
+
+DELETE  FROM ORDERS
+WHERE product_name = 'toy';
+
+--UPDATE
+UPDATE ORDERS SET PRICE = 230 WHERE ID = 1001;
+UPDATE ORDERS SET PRICE = 250;
+UPDATE ORDERS SET PRODUCT_NAME = NULL WHERE ID = 1001;
+
+--HOMEWORK LESSON3.2
+INSERT INTO ORDERS
+VALUES(1005, 'test1', 150, TO_DATE('2017/05/05 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), TO_DATE('2017/05/05 23:05:47', 'yyyy/mm/dd hh24:mi:ss'));
+
+INSERT INTO ORDERS
+VALUES(1006, 'test2', 160, TO_DATE('2018/05/05 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), TO_DATE('2018/05/05 23:05:47', 'yyyy/mm/dd hh24:mi:ss'));
+
+INSERT INTO ORDERS
+VALUES(1007, 'test3', 170, TO_DATE('2019/05/05 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), TO_DATE('2019/05/05 23:05:47', 'yyyy/mm/dd hh24:mi:ss'));
+
+INSERT INTO ORDERS
+VALUES(1008, 'test4', 180, TO_DATE('2019/05/05 17:01:44', 'yyyy/mm/dd hh24:mi:ss'), TO_DATE('2019/05/05 23:05:47', 'yyyy/mm/dd hh24:mi:ss'));
+
+INSERT INTO ORDERS
+VALUES(1009, 'test5', 250, TO_DATE('2019/05/05 21:02:25', 'yyyy/mm/dd hh24:mi:ss'), TO_DATE('2019/05/05 23:05:47', 'yyyy/mm/dd hh24:mi:ss'));
+
+INSERT INTO ORDERS
+VALUES(1010, 'test6', 340, TO_DATE('2019/05/05 21:02:42', 'yyyy/mm/dd hh24:mi:ss'), TO_DATE('2019/05/05 23:05:47', 'yyyy/mm/dd hh24:mi:ss'));
+
+INSERT INTO ORDERS
+VALUES(1011, 'test7', 400, TO_DATE('2019/05/05 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), TO_DATE('2019/05/05 23:05:47', 'yyyy/mm/dd hh24:mi:ss'));
+
+INSERT INTO ORDERS
+VALUES(1012, 'test8', 450, TO_DATE('2019/05/05 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), TO_DATE('2019/05/05 23:05:47', 'yyyy/mm/dd hh24:mi:ss'));
+
+INSERT INTO ORDERS
+VALUES(1013, 'test9', 400, TO_DATE('2019/05/05 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), TO_DATE('2019/05/05 23:05:47', 'yyyy/mm/dd hh24:mi:ss'));
+
+INSERT INTO ORDERS
+VALUES(1014, 'test10', 540, TO_DATE('2019/05/05 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), TO_DATE('2019/05/05 23:05:47', 'yyyy/mm/dd hh24:mi:ss'));
+
+--HOMEWORK LESSON3.3
+
+INSERT INTO PRODUCT
+VALUES(1001, 'candy', 'test1', 10);
+
+INSERT INTO PRODUCT
+VALUES(1002, 'toy', 'test2', 20);
+
+INSERT INTO PRODUCT
+VALUES(1003, 't-shirt', 'test3', 30);
+
+INSERT INTO PRODUCT
+VALUES(1004, 'skirt', 'test4', 40);
+
+INSERT INTO PRODUCT
+VALUES(1005, 'clouses', 'test5', 50);
+
+INSERT INTO PRODUCT
+VALUES(1006, 'bridjes', 'test6', 60);
+
+INSERT INTO PRODUCT
+VALUES(1007, 'suit', 'test7', 70);
+
+INSERT INTO PRODUCT
+VALUES(1008, 'jeens', 'test8', 80);
+
+INSERT INTO PRODUCT
+VALUES(1009, 'toy1', 'test9', 90);
+
+INSERT INTO PRODUCT
+VALUES(1010, 'pleer', 'test10', 100);
+
+--HOMEWORK LESSON3.4
+
+SELECT * FROM PRODUCTS WHERE COST_PRICE = 50 AND NAME = toy123;
+SELECT * FROM PRODUCTS WHERE ID = 1005 OR COST_PRICE < 50;
+SELECT * FROM PRODUCTS WHERE ID > 1005 OR MANUFACTURER_NAME = 'someManufacturer';
+SELECT * FROM PRODUCTS;
+
+--HOMEWORK LESSON3.5
+
+UPDATE PRODUCTS SET manufacturer_name  = 'china' WHERE NAME = 't-shirt' ;
+SELECT * FROM PRODUCTS;
+
+--HOMEWORK LESSON3.6
+
+DELETE  FROM PRODUCTS
+WHERE ID < 1050;
+
+
+
+

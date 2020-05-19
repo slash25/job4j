@@ -1,0 +1,72 @@
+INSERT INTO ORDERS
+VALUES(1014, 'smallcar', 540, TO_DATE('2019/05/05 21:02:44', 'yyyy/mm/dd hh24:mi:ss'), TO_DATE('2019/05/05 23:05:47', 'yyyy/mm/dd hh24:mi:ss'));
+
+--SELECT column1, column2 - FROM table_name
+--WHERE conditions
+--GROUP BY column_name
+
+SELECT PRODUCT_NAME, SUM(PRICE) FROM ORDERS
+GROUP BY PRODUCT_NAME;
+
+--ФУНКЦИИ НУЖНО ПРИМЕНЯТЬ К КОНКРЕТНОЙ КОЛОНКЕ
+--ФУНКЦИИ ПРИМЕНЯЕМ К ТЕМ КОЛОНКАМ КОТОРЫЕ ЧИСЛОВЫЕ
+
+--AVG это среднее значение
+SELECT PRODUCT_NAME, AVG(PRICE) FROM ORDERS
+GROUP BY PRODUCT_NAME;
+--ORDER BY PRODUCT_NAME
+--ASC СОРТИРОВКА ПО ВОЗРАСТАНИЮ
+--DESC СОРТИРОВКА ПО УБЫВАНИЮ
+SELECT PRODUCT_NAME, PRICE FROM ORDERS
+ORDER BY PRODUCT_NAME DESC;
+--ВЫБОРКА ПО ВСЕМ КОЛОНКАМ
+SELECT * FROM ORDERS
+ORDER BY PRODUCT_NAME ASC;
+
+--СОРТИРОВКА ПО ПОЛЮ ПРАЙС ПО ВОЗРАСТАНИЮ
+SELECT * FROM ORDERS
+ORDER BY PRICE DESC;
+
+--ТУТ НЕ РАБОТАЕТ ПОТОМУ ЧТО ТУТ ВЫПОЛНЯЕТСЯ ДВЕ ПРОТИВОРЕЧАЩИХ ФУНКЦИИ:
+--ВЫВОД ВСЕХ  ИМЕН И ВЫВОД СУММЫ
+SELECT PRODUCT_NAME, SUM(PRICE) FROM ORDERS;
+
+--COUNT СЧИТАЕМ КОЛИЧЕСТВО ЗАПИСЕЙ
+SELECT COUNT(*) FROM ORDERS
+WHERE PRICE > 200;
+
+
+--SELECT column1, column2 - FROM table_name
+--WHERE conditions AND EXIST(SELECT column1, column2 - FROM table_name
+--WHERE conditions)
+SELECT * FROM ORDERS
+WHERE EXISTS (SELECT * FROM PRODUCTS WHERE NAME = ORDERS.PRODUCT_NAME);
+
+--НАХОДИМ ОДИНАКОВЫЕ ИМЕНА И ДЕЛАЕМ СРАВНЕНИЕ ПО КОНКРЕТНЫМ НАЗВАНИЯМ ТОВАРОВ
+SELECT * FROM ORDERS--вернем то что ниже средней цены
+WHERE EXISTS (SELECT * FROM PRODUCTS WHERE NAME = ORDERS.PRODUCT_NAME AND PRICE > ORDERS.PRICE);
+
+--НАХОДИМ ОДИНАКОВЫЕ ИМЕНА И ДЕЛАЕМ СРАВНЕНИЕ ПО КОНКРЕТНЫМ НАЗВАНИЯМ ТОВАРОВ
+SELECT * FROM ORDERS--НАЙДЕМ САМУЮ БОЛЬШУЮ ЦЕНУ
+WHERE EXISTS (SELECT * FROM PRODUCTS WHERE NAME = ORDERS.PRODUCT_NAME AND PRICE < ORDERS.PRICE);
+
+--BETWEEN для поиска В ОДНОЙ КОЛОНКЕ С ЧИСЛА В ДРУГОЙ КОЛОНКЕ ПО ЧИСЛО
+--TO_DATE ЭТО СТАНДАРТНАЯ ФУНКЦИЯ В АРАКАЛ
+SELECT  * FROM ORDERS WHERE PRICE BETWEEN 1 AND 200; --  равносильно SELECT  * FROM ORDERS WHERE PRICE > 1 AND PRICE < 200
+SELECT * FROM ORDERS WHERE DATE_ORDERED BETWEEN TO_DATE('05-05-2019') AND TO_DATE('05-06-2019');
+
+--LIKE используется для поиска    -- % этот знак заменяет любой текст,
+--SELECT * FROM table_name WHERE conditions AND/OR column_name LIKE 'pattern';
+SELECT * FROM ORDERS WHERE PRODUCT_NAME LIKE 'a%';--ищем текст начинающийся на букву а
+SELECT * FROM ORDERS WHERE PRODUCT_NAME LIKE '%t';-- --ищем текст заканчивающийся на букву t
+SELECT * FROM ORDERS WHERE PRODUCT_NAME LIKE '%phone%';
+
+
+CREATE TABLE MOVIE_STAT(
+MOVIE_ID NUMBER,
+CONSTRAINT CON_MOVIE_ID  PRIMARY KEY (MOVIE_ID),
+--CONSTRAINT CONST-NAME CONSTRAINT TYPE (COLUMN NAME)
+RATING DECIMAL(2,1),
+DOMESTIC_SALES NUMBER,
+INTERNATIONAL_SALES NUMBER
+);
