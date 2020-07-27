@@ -7,7 +7,7 @@ import static org.junit.Assert.assertThat;
 public class PhoneDictionaryTest {
     @Test
     public void whenFindByName() {
-        PhoneDictionary phones = new PhoneDictionary();
+        PhoneDict phones = new PhoneDict();
         phones.add(
                 new Person("Petr", "Arsentev", "534872", "Bryansk"));
         ArrayList<Person> persons = phones.find("Petr");
@@ -15,7 +15,7 @@ public class PhoneDictionaryTest {
     }
 
     public void whenFindBySurname() {
-        PhoneDictionary phones = new PhoneDictionary();
+        PhoneDict phones = new PhoneDict();
         phones.add(
                 new Person("Petr", "Arsentev", "534872", "Bryansk"));
         ArrayList<Person> persons = phones.find("Arsentev");
@@ -23,7 +23,7 @@ public class PhoneDictionaryTest {
     }
 
     public void whenFindByPhone() {
-        PhoneDictionary phones = new PhoneDictionary();
+        PhoneDict phones = new PhoneDict();
         phones.add(
                 new Person("Petr", "Arsentev", "534872", "Bryansk"));
         ArrayList<Person> persons = phones.find("534872");
@@ -31,7 +31,7 @@ public class PhoneDictionaryTest {
     }
 
     public void whenFindByAddress() {
-        PhoneDictionary phones = new PhoneDictionary();
+        PhoneDict phones = new PhoneDict();
         phones.add(
                 new Person("Petr", "Arsentev", "534872", "Bryansk"));
         ArrayList<Person> persons = phones.find("Bryansk");

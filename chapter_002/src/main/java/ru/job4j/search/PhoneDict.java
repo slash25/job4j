@@ -2,7 +2,7 @@ package ru.job4j.search;
 
 import java.util.ArrayList;
 
-public class PhoneDictionary {
+public class PhoneDict {
     private ArrayList<Person> persons = new ArrayList<Person>();
 
     public void add(Person person) {
