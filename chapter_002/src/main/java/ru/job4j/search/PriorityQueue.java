@@ -1,4 +1,5 @@
 package ru.job4j.search;
+
 import java.util.LinkedList;
 
 public class PriorityQueue {
@@ -9,19 +10,30 @@ public class PriorityQueue {
      * Метод должен вставлять в нужную позицию элемент.
      * Позиция определяется по полю приоритет.
      * Для вставки использовать add(int index, E value)
+     *
      * @param task задача
+     */
+
+    /*
+
+
+ На каждой итерации сравнивать приоритет задачи котору добавляем с той которая
+ нам доступна на этой итерации. Если приоритет той, которую добавляем ниже -
+ выходим из цикла.
+ После указанной проверки - мы инкрементируем переменную index.
      */
     public void put(Task task) {
         int index = 0;
-            if (task.getDesc().contains("low")) {
-                index = 0;
-            } else if (task.getDesc().contains("urgent")) {
-                index = 0;
-            } else if (task.getDesc().contains("middle")) {
-                index = 1;
+
+        for (Task element : tasks) {
+            if (task.getPriority() > element.getPriority()) {
+                index++;
+            } else {
+                break;
+            }
         }
 
-            this.tasks.add(index, task);
+        this.tasks.add(index, task);
     }
 
     public Task take() {
