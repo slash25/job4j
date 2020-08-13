@@ -1,4 +1,4 @@
-package ru.job4j.search;
+package collections;
 
 import java.util.LinkedList;
 
@@ -17,7 +17,7 @@ public class PriorityQueue {
     /*
 
 
- На каждой итерации сравнивать приоритет задачи котору добавляем с той которая
+ На каждой итерации сравнивать приоритет задачи которую добавляем с той которая
  нам доступна на этой итерации. Если приоритет той, которую добавляем ниже -
  выходим из цикла.
  После указанной проверки - мы инкрементируем переменную index.
@@ -26,11 +26,10 @@ public class PriorityQueue {
         int index = 0;
 
         for (Task element : tasks) {
-            if (task.getPriority() > element.getPriority()) {
-                index++;
-            } else {
+            if (task.getPriority() < element.getPriority()) {
                 break;
             }
+            index++;
         }
 
         this.tasks.add(index, task);
