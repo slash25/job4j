@@ -12,19 +12,13 @@ public class ConvertList2Array {
 
         for (Integer num : list) {
 
-            if (list.get(index) == 1) {
-                array[row][cell] = num;
-
-            } else if ((list.get(index)  == 4) || (list.get(index)  == 7))  {
-                row++;
+            if (cell == cells) {
                 cell = 0;
-                array[row][cell] = num;
-
-            } else {
-                cell++;
-                array[row][cell] = num;
+                row++;
             }
-            index++;
+                array[row][cell] = num;
+            cell++;
+
         }
         return array;
     }
