@@ -36,5 +36,4 @@ public class FindAllActionTest {
         assertThat(new String(out.toByteArray()), is(expect));
         System.setOut(def); // Вернем системный вывод на консоль
     }
-
 }
