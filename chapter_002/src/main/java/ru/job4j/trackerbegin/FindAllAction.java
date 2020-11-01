@@ -2,6 +2,7 @@ package ru.job4j.trackerbegin;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class FindAllAction implements UserAction {
     @Override
@@ -12,7 +13,7 @@ public class FindAllAction implements UserAction {
     @Override
     public boolean execute(Input input, Tracker tracker) {
 
-        ArrayList<Item> allItems;
+        List<Item> allItems;
         allItems = tracker.findAll();
         for (Item item : allItems) {
             System.out.println((String.format("%s %s", item.getId(), item.getName())));
