@@ -46,16 +46,13 @@ public class Tracker {
      * @param id input id
      * @return item or null
      */
-    Item findById(String id) throws NullPointerException {
-        try {
+    Item findById(String id) {
             for (Item it : items) {
                 if (it.getId().equals(id)) {
                     return it;
                 }
             }
-        } catch (NullPointerException e) {
             System.out.println("Can't find item with id " + id);
-        }
         return null;
     }
 
@@ -66,19 +63,15 @@ public class Tracker {
      * @param id input id
      * @return index or null
      */
-   private Integer findIndexById(String id) throws NullPointerException {
+   private Integer findIndexById(String id) {
         int index = 0;
-        try {
             for (Item it : items) {
                 if (it.getId().equals(id)) {
                     return index;
                 }
                 index++;
             }
-
-        } catch (NullPointerException e) {
             System.out.println("Can't find item with id " + id);
-        }
         return null;
     }
 
@@ -92,7 +85,6 @@ public class Tracker {
      */
     List<Item> findByName(String name) {
         List<Item> result = new ArrayList<>();
-        int j = 0;
         for (Item itName : items) {
             if (itName.getName().equals(name)) {
                 result.add(itName);
