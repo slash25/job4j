@@ -29,12 +29,10 @@ public class Tracker {
      * @return true or false
      */
     boolean delete(String id) {
-        Integer index = findIndexById(id);
-            if (index != null) {
-                items.remove((int) index);
+        int index = findIndexById(id);
+            if (index != -1) {
+                items.remove(index);
                 return true;
-            //нужно сместить массив на 1 ячейку влево а предудущая ячейка стирается
-            //System.arraycopy(items, count + 1, items, count, position - count);
         }
         return false;
     }
@@ -47,6 +45,7 @@ public class Tracker {
      * @return item or null
      */
     Item findById(String id) {
+
             for (Item it : items) {
                 if (it.getId().equals(id)) {
                     return it;
@@ -72,7 +71,7 @@ public class Tracker {
                 index++;
             }
             System.out.println("Can't find item with id " + id);
-        return null;
+        return -1;
     }
 
 
@@ -101,9 +100,9 @@ public class Tracker {
      * @return true or false
      */
     boolean replace(String id, Item item) {
-        Integer index = findIndexById(id);
-        if (index != null) {
-                items.set((int) index, item);
+        int index = findIndexById(id);
+        if (index != -1) {
+                items.set(index, item);
                 return true;
         }
         return false;
